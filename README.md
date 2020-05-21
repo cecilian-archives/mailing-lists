@@ -52,4 +52,4 @@ This function requires config in the following format. If any keys are missing, 
 - Inline images and attachments may be tricky here. The [Mailgun-JS library's handlers](http://highlycaffeinated.com/mailgun-js/#/attach) may help.
 - This is also needed so we can rewrite the Reply-To header to match the sender of the original message. Currently it defults to `postmaster@ml.example.com` when POSTing via API.
 - consider storing configuration data in Firebase (and retrieving via `firebase-admin` module) so it's more easily editable
-- add some caller verification (key auth? pre-shared key?) to ensure only the correct Mailgun account can POST the endpoint
+- add some caller verification (probably via Mailgun's inbuilt webhook signing) to ensure only the correct Mailgun account can POST the endpoint
